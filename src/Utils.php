@@ -25,5 +25,23 @@ class Utils extends Object
 
 		return $dec;
 	}
+	/**
+	 * @see http://stackoverflow.com/questions/45527318/convert-wei-to-ethereum-with-php
+	 *
+	 * @param string $wei
+	 * @return string
+	 */
+	public static function wei2eth($wei)
+	{
+		return bcdiv($wei,'1000000000000000000',18);
+	}
+	/**
+	 * @param string $eth
+	 * @return string
+	 */
+	public static function eth2wei($eth)
+	{
+		return bcmul($eth,'1000000000000000000');
+	}
 
 }
